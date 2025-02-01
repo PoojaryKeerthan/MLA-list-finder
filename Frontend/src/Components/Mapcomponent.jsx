@@ -5,7 +5,9 @@ import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { addLocation, clearLocations } from '../Redux/Slices/LocationSlice';
 import { useNavigate } from 'react-router';
+
 const API = import.meta.env.VITE_API_KEY;
+
 const MapComponent = () => {
   //hooks
   const [Detailsdiv, setDetailsdiv] = useState(false);
@@ -99,11 +101,10 @@ const MapComponent = () => {
   }
 
   return (
-    <div className="p-4 relative">
+    <div className="p-1 relative">
       <div
-        className="h-[400px] w-full rounded-2xl z-0"
+        className="min-h-[60vh] sm:min-h-[70vh] rounded-2xl z-0"
         id="map"
-        style={{ height: '500px', width: '100%' }}
       />
       {Detailsdiv && (
         <div className="p-4 absolute inset-0 bg-black/30 backdrop-blur-md z-10 flex items-center justify-center">

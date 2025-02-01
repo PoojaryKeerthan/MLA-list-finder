@@ -1,16 +1,13 @@
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
+import Logo from "../assets/logo.png";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
 
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setIsOpen(false);
+        console.log("clicked outside");
       }
     };
     document.addEventListener('click', handleClickOutside);
@@ -19,26 +16,23 @@ const Navbar = () => {
     };
   }, []);
   return (
-    <nav className="bg-gray-200 p-4 z-5" >
+    <nav className="bg-gray-200 p-6 z-5 mx-auto max-h-[12vh] rounded-br-xl rounded-tl-xl" >
       <div className="flex justify-between items-center max-w-7xl mx-auto text-white">
-        <div className="text-xl font-semibold text-gray-800">MLAfinder</div>
+        <a href="/" className="text-xl font-semibold text-gray-800 flex text-center gap-2 bold items-center">
+          <div className="text-2xl font-semibold text-gray-800 flex text-center gap-2 bold items-center">
+            <img src={Logo || "/placeholder.svg"} alt="image" className="max-h-[7vh]"></img>
+            MLA Finder
+          </div>
+        </a>
         <div className="relative" ref={dropdownRef}>
-          <button
+          <a
             id="google_translate_element"
-            onClick={toggleDropdown}
+            href="https://github.com/PoojaryKeerthan/MLA-list-finder"
+            target="_blank"
             className="bg-gray-500 px-4 py-2 rounded-md focus:outline-none hover:cursor-pointer"
           >
-            Credits
-          </button>
-          {isOpen && (
-            <div className="absolute right-0 mt-2 w-48 bg-white text-black rounded-md shadow-lg z-10">
-              <ul className="py-2">
-                <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">prsindia.org</li>
-                <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">www.maptiler.com</li>
-                <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">leafletjs.com</li>
-              </ul>
-            </div>
-          )}
+            Github
+          </a>
         </div>
       </div>
     </nav>

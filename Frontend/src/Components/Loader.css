@@ -1,7 +1,4 @@
-/* From Uiverse.io by kennyotsu */
 .card {
-  /* color used to softly clip top and bottom of the .words container */
-
   background-color: var(--bg-color);
   padding: 1rem 2rem;
   border-radius: 1.25rem;
@@ -85,5 +82,74 @@
   100% {
     -webkit-transform: translateY(-400%);
     transform: translateY(-400%);
+  }
+}
+
+.loader-container {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.ashoka-chakra {
+  width: 100%;
+  height: 100%;
+  border: 4px solid #000080;
+  border-radius: 50%;
+  position: relative;
+  animation: rotate 4s linear infinite;
+}
+
+.ashoka-chakra::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+  border: 4px solid #000080;
+  border-radius: 50%;
+}
+
+.ashoka-chakra::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background-color: #000080;
+  border-radius: 50%;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.ashoka-chakra {
+  font-size: 24px;
+  animation: blink 1.4s infinite both;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0.2;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.2;
   }
 }

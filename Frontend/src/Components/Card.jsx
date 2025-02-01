@@ -11,9 +11,9 @@ const Card = ({ Name, place, age, state, party, fullWidth }) => {
 
   return (
     <div className="relative w-full">
-      <div className={`mt-5 ${fullWidth ? "w-full" : "sm:w-56"} h-80`}>
+      <div className={`mt-5 ${fullWidth ? "w-[95vw]" : "sm:w-56"} h-84`}>
         <div className="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-200 dark:border-neutral-700 dark:shadow-neutral-700/70 h-full">
-          <div className={`p-4 md:p-5 flex-1 overflow-auto ${fullWidth ? "text-center" : ""}`}>
+          <div className={`p-4 md:p-8 flex-1 overflow-auto ${fullWidth ? "text-center" : ""}`}>
             <h3 className={`text-lg font-bold text-black dark:text-black ${fullWidth ? "text-xl" : ""}`}>
               {Name}
             </h3>

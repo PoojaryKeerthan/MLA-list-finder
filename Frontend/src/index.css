@@ -2,4 +2,11 @@
 
 :root {
     background-color: #000000;
+    background-image: url(./assets//bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-blend-mode: multiply;
+    background-color: rgba(0, 0, 0, 0.7);
 }
